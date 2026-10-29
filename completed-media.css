@@ -81,3 +81,18 @@ body:has([data-nav=gallery].active) .vm-asset span{display:none!important}
 .youtube-play-link:hover span,.youtube-play-link:focus-visible span{background:#fff;color:#000}
 .youtube-play-link:focus-visible{outline:2px solid #fff;outline-offset:6px}
 @media(max-width:900px){.platform-hero.youtube{grid-template-columns:minmax(0,1fr);min-height:0;gap:32px}.platform-hero.youtube h2{font-size:clamp(36px,8vw,64px)}}
+
+/* A live stage-light visual loop behind the original entrance identity. */
+.site-intro{overflow:hidden;isolation:isolate}
+.site-intro .intro-visual{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:.9;transition:opacity .7s}
+.site-intro::before{opacity:.45;pointer-events:none}
+.site-intro::after{opacity:.5}
+.site-intro .intro-inner{max-height:100svh;padding:30px 0}
+.site-intro .enter-site{background:rgba(8,5,7,.55);border-color:rgba(230,219,201,.6);backdrop-filter:blur(8px);box-shadow:0 0 45px rgba(116,35,48,.12)}
+.site-intro .enter-site::before,.site-intro .enter-site::after{border-color:rgba(230,219,201,.2)}
+.site-intro .enter-site:hover,.site-intro .enter-site:focus-visible{background:#eee9e1;color:#080708;box-shadow:0 0 70px rgba(230,219,201,.16)}
+.site-intro .enter-site:focus-visible{outline:2px solid #fff;outline-offset:9px}
+.site-intro.is-leaving .intro-visual{opacity:0}
+.site-intro.is-leaving .intro-inner{transform:scale(1.06);opacity:0;transition:transform .9s,opacity .7s}
+@media(max-height:650px){.site-intro .intro-brand{margin:12px auto}.site-intro .intro-brand img{max-height:28svh}.site-intro .intro-kicker{margin-bottom:12px}.site-intro .intro-line{height:25px;margin:8px 0 16px;animation:none}.site-intro .enter-site{width:96px;height:96px}.site-intro .intro-note{margin-top:22px}}
+@media(prefers-reduced-motion:reduce){.site-intro,.site-intro.is-leaving .intro-inner,.site-intro .intro-visual{transition:none}.site-intro.is-leaving .intro-inner{transform:none}}
