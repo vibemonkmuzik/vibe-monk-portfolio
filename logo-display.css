@@ -1,0 +1,6 @@
+/* Official logo-driven display treatment */
+.brand-display{display:block;width:min(760px,100%);margin:18px 0 24px}
+.brand-display img{display:block;width:100%;height:auto;max-height:250px;object-fit:contain;object-position:left center;filter:drop-shadow(0 18px 48px rgba(0,0,0,.34))}
+.hero .brand-display{width:min(680px,100%);margin:12px 0 20px}
+.page-hero .brand-display{width:min(560px,75vw)}
+@media(max-width:720px){.brand-display{width:min(430px,100%)}.hero .brand-display{width:92%}.brand-display img{max-height:180px}}
