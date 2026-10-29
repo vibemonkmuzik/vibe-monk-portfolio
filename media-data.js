@@ -103,129 +103,44 @@ window.VIBE_MEDIA = {
   ],
   "photos": [
     {
-      "src": "./artist-photos-edited/artist-01.webp",
-      "thumb": "./artist-photos-edited/artist-01-thumb.webp",
-      "alt": "VIBE MONK \u2014 BLACK LEATHER DJ portrait"
+      "src": "./artist-photos/artist-01.webp",
+      "thumb": "./artist-photos/artist-01-thumb.webp",
+      "alt": "VIBE MONK original artist photograph \u2014 Hands on headphones"
     },
     {
-      "src": "./artist-photos-edited/artist-22.webp",
-      "thumb": "./artist-photos-edited/artist-22-thumb.webp",
-      "alt": "VIBE MONK \u2014 NAVY PINSTRIPE DJ portrait"
+      "src": "./artist-photos/artist-02.webp",
+      "thumb": "./artist-photos/artist-02-thumb.webp",
+      "alt": "VIBE MONK original artist photograph \u2014 Hand across face"
     },
     {
-      "src": "./artist-photos-edited/artist-02.webp",
-      "thumb": "./artist-photos-edited/artist-02-thumb.webp",
-      "alt": "VIBE MONK \u2014 COBALT VELVET DJ portrait"
+      "src": "./artist-photos/artist-03.webp",
+      "thumb": "./artist-photos/artist-03-thumb.webp",
+      "alt": "VIBE MONK original artist photograph \u2014 Headphones extended toward camera"
     },
     {
-      "src": "./artist-photos-edited/artist-18.webp",
-      "thumb": "./artist-photos-edited/artist-18-thumb.webp",
-      "alt": "VIBE MONK \u2014 BLACK & GOLD DJ portrait"
+      "src": "./artist-photos/artist-04.webp",
+      "thumb": "./artist-photos/artist-04-thumb.webp",
+      "alt": "VIBE MONK original artist photograph \u2014 Finger to lips"
     },
     {
-      "src": "./artist-photos-edited/artist-06.webp",
-      "thumb": "./artist-photos-edited/artist-06-thumb.webp",
-      "alt": "VIBE MONK \u2014 EMERALD JACQUARD DJ portrait"
+      "src": "./artist-photos/artist-05.webp",
+      "thumb": "./artist-photos/artist-05-thumb.webp",
+      "alt": "VIBE MONK original artist photograph \u2014 Three-quarter portrait"
     },
     {
-      "src": "./artist-photos-edited/artist-23.webp",
-      "thumb": "./artist-photos-edited/artist-23-thumb.webp",
-      "alt": "VIBE MONK \u2014 MONOCHROME ASYMMETRIC DJ portrait"
+      "src": "./artist-photos/artist-12.webp",
+      "thumb": "./artist-photos/artist-12-thumb.webp",
+      "alt": "VIBE MONK original artist photograph \u2014 Side profile"
     },
     {
-      "src": "./artist-photos-edited/artist-11.webp",
-      "thumb": "./artist-photos-edited/artist-11-thumb.webp",
-      "alt": "VIBE MONK \u2014 MONOCHROME JACQUARD DJ portrait"
+      "src": "./artist-photos/artist-14.webp",
+      "thumb": "./artist-photos/artist-14-thumb.webp",
+      "alt": "VIBE MONK original artist photograph \u2014 Head lowered"
     },
     {
-      "src": "./artist-photos-edited/artist-17.webp",
-      "thumb": "./artist-photos-edited/artist-17-thumb.webp",
-      "alt": "VIBE MONK \u2014 PURPLE VARSITY DJ portrait"
-    },
-    {
-      "src": "./artist-photos-edited/artist-08.webp",
-      "thumb": "./artist-photos-edited/artist-08-thumb.webp",
-      "alt": "VIBE MONK \u2014 IVORY UTILITY DJ portrait"
-    },
-    {
-      "src": "./artist-photos-edited/artist-21.webp",
-      "thumb": "./artist-photos-edited/artist-21-thumb.webp",
-      "alt": "VIBE MONK \u2014 OLIVE FIELD DJ portrait"
-    },
-    {
-      "src": "./artist-photos-edited/artist-03.webp",
-      "thumb": "./artist-photos-edited/artist-03-thumb.webp",
-      "alt": "VIBE MONK \u2014 LIME TECHWEAR DJ portrait"
-    },
-    {
-      "src": "./artist-photos-edited/artist-15.webp",
-      "thumb": "./artist-photos-edited/artist-15-thumb.webp",
-      "alt": "VIBE MONK \u2014 RED VELVET DJ portrait"
-    },
-    {
-      "src": "./artist-photos-edited/artist-12.webp",
-      "thumb": "./artist-photos-edited/artist-12-thumb.webp",
-      "alt": "VIBE MONK \u2014 TEAL SILK DJ portrait"
-    },
-    {
-      "src": "./artist-photos-edited/artist-09.webp",
-      "thumb": "./artist-photos-edited/artist-09-thumb.webp",
-      "alt": "VIBE MONK \u2014 PLUM WAISTCOAT DJ portrait"
-    },
-    {
-      "src": "./artist-photos-edited/artist-26.webp",
-      "thumb": "./artist-photos-edited/artist-26-thumb.webp",
-      "alt": "VIBE MONK \u2014 WHITE STAGE BLAZER DJ portrait"
-    },
-    {
-      "src": "./artist-photos-edited/artist-07.webp",
-      "thumb": "./artist-photos-edited/artist-07-thumb.webp",
-      "alt": "VIBE MONK \u2014 INDIGO DENIM DJ portrait"
-    },
-    {
-      "src": "./artist-photos-edited/artist-10.webp",
-      "thumb": "./artist-photos-edited/artist-10-thumb.webp",
-      "alt": "VIBE MONK \u2014 COPPER SATIN DJ portrait"
-    },
-    {
-      "src": "./artist-photos-edited/artist-24.webp",
-      "thumb": "./artist-photos-edited/artist-24-thumb.webp",
-      "alt": "VIBE MONK \u2014 GOLD BROCADE DJ portrait"
-    },
-    {
-      "src": "./artist-photos-edited/artist-05.webp",
-      "thumb": "./artist-photos-edited/artist-05-thumb.webp",
-      "alt": "VIBE MONK \u2014 GUNMETAL BOMBER DJ portrait"
-    },
-    {
-      "src": "./artist-photos-edited/artist-20.webp",
-      "thumb": "./artist-photos-edited/artist-20-thumb.webp",
-      "alt": "VIBE MONK \u2014 SCARLET MOTO DJ portrait"
-    },
-    {
-      "src": "./artist-photos-edited/artist-13.webp",
-      "thumb": "./artist-photos-edited/artist-13-thumb.webp",
-      "alt": "VIBE MONK \u2014 ORANGE SUEDE DJ portrait"
-    },
-    {
-      "src": "./artist-photos-edited/artist-16.webp",
-      "thumb": "./artist-photos-edited/artist-16-thumb.webp",
-      "alt": "VIBE MONK \u2014 GRAPHITE VEST DJ portrait"
-    },
-    {
-      "src": "./artist-photos-edited/artist-04.webp",
-      "thumb": "./artist-photos-edited/artist-04-thumb.webp",
-      "alt": "VIBE MONK \u2014 BURGUNDY SATIN DJ portrait"
-    },
-    {
-      "src": "./artist-photos-edited/artist-19.webp",
-      "thumb": "./artist-photos-edited/artist-19-thumb.webp",
-      "alt": "VIBE MONK \u2014 NAVY UTILITY DJ portrait"
-    },
-    {
-      "src": "./artist-photos-edited/artist-14.webp",
-      "thumb": "./artist-photos-edited/artist-14-thumb.webp",
-      "alt": "VIBE MONK \u2014 BLUE TECHNICAL DJ portrait"
+      "src": "./artist-photos/artist-16.webp",
+      "thumb": "./artist-photos/artist-16-thumb.webp",
+      "alt": "VIBE MONK original artist photograph \u2014 Upward gaze"
     }
   ]
 };
