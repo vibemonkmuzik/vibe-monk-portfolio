@@ -103,12 +103,6 @@ window.VIBE_MEDIA = {
   ],
   "photos": [
     {
-      "src": "./artist-photos-edited/artist-01.webp",
-      "thumb": "./artist-photos-edited/artist-01-thumb.webp",
-      "number": "01",
-      "alt": "VIBE MONK \u2014 PHOTO #01"
-    },
-    {
       "src": "./artist-photos-edited/artist-02.webp",
       "thumb": "./artist-photos-edited/artist-02-thumb.webp",
       "number": "02",
@@ -199,18 +193,6 @@ window.VIBE_MEDIA = {
       "alt": "VIBE MONK \u2014 PHOTO #09"
     },
     {
-      "src": "./artist-photos-edited/artist-26.webp",
-      "thumb": "./artist-photos-edited/artist-26-thumb.webp",
-      "number": "26",
-      "alt": "VIBE MONK \u2014 PHOTO #26"
-    },
-    {
-      "src": "./artist-photos-edited/artist-07.webp",
-      "thumb": "./artist-photos-edited/artist-07-thumb.webp",
-      "number": "07",
-      "alt": "VIBE MONK \u2014 PHOTO #07"
-    },
-    {
       "src": "./artist-photos-edited/artist-11.webp",
       "thumb": "./artist-photos-edited/artist-11-thumb.webp",
       "number": "11",
@@ -223,22 +205,10 @@ window.VIBE_MEDIA = {
       "alt": "VIBE MONK \u2014 PHOTO #17"
     },
     {
-      "src": "./artist-photos-edited/artist-24.webp",
-      "thumb": "./artist-photos-edited/artist-24-thumb.webp",
-      "number": "24",
-      "alt": "VIBE MONK \u2014 PHOTO #24"
-    },
-    {
       "src": "./artist-photos-edited/artist-15.webp",
       "thumb": "./artist-photos-edited/artist-15-thumb.webp",
       "number": "15",
       "alt": "VIBE MONK \u2014 PHOTO #15"
-    },
-    {
-      "src": "./artist-photos-edited/artist-20.webp",
-      "thumb": "./artist-photos-edited/artist-20-thumb.webp",
-      "number": "20",
-      "alt": "VIBE MONK \u2014 PHOTO #20"
     },
     {
       "src": "./artist-photos-edited/artist-13.webp",
