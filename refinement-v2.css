@@ -1,0 +1,41 @@
+/* V2 refinement — cinematic vignette + distinct Music / YouTube experiences */
+:root{--bg:#000;--panel:#050505;--ink:#fff;--muted:#a7a7a7;--gold:#fff;--acid:#fff;--wine:#000;--red:#fff;--line:rgba(255,255,255,.18)}
+
+/* Cinematic vignette treatment — edge falloff without crushing faces/artwork */
+.hero-art,.artist-photo-hero,.bio-photo-panel,.gallery-item,.gig-flyer-card{position:relative;isolation:isolate;background:#000}
+.hero-art:before,.artist-photo-hero:before,.bio-photo-panel:before,.gallery-item:before,.gig-flyer-card:before{content:"";position:absolute;inset:0;z-index:3;pointer-events:none;background:radial-gradient(ellipse at center,transparent 36%,rgba(0,0,0,.16) 58%,rgba(0,0,0,.68) 100%),linear-gradient(180deg,rgba(0,0,0,.12),transparent 24%,transparent 67%,rgba(0,0,0,.56));mix-blend-mode:multiply}
+.hero-art:before{background:radial-gradient(ellipse at 56% 42%,transparent 29%,rgba(0,0,0,.18) 54%,rgba(0,0,0,.82) 100%),linear-gradient(90deg,#000 0,transparent 24%,transparent 73%,rgba(0,0,0,.38) 100%)}
+.gallery-item:before{transition:opacity .55s ease}.gallery-item:hover:before{opacity:.58}
+.hero-art img,.artist-photo-hero img,.bio-photo-panel img,.gallery-item img,.gig-flyer-card img{filter:grayscale(1) contrast(1.1) brightness(.92)}
+
+/* MUSIC = editorial discography. No platform-card visual language. */
+body:has(.breadcrumb) .release-stack{position:relative}
+.release-stack{counter-reset:release;border-top:1px solid #fff;background:#000}
+.release-stack>div{position:relative;min-height:112px;padding:26px 18px 26px 0;border-bottom:1px solid rgba(255,255,255,.28);grid-template-columns:82px minmax(0,1fr) auto;overflow:hidden;transition:min-height .45s cubic-bezier(.2,.8,.2,1),padding .45s,background .35s,color .35s}
+.release-stack>div:before{content:"";position:absolute;inset:0;background:#fff;transform:translateY(101%);transition:transform .48s cubic-bezier(.77,0,.18,1);z-index:0}
+.release-stack>div>*{position:relative;z-index:1}.release-stack>div:hover:before{transform:translateY(0)}.release-stack>div:hover{padding-left:26px;color:#000}.release-stack>div:hover span,.release-stack>div:hover small,.release-stack>div:hover a{color:#000}
+.release-stack strong{font-size:clamp(28px,4.4vw,70px);line-height:.9;font-weight:600;letter-spacing:-.06em}.release-stack small{max-width:320px;text-align:right;color:#aaa;transition:color .3s}.release-stack>div>span{color:#fff;transition:color .3s}
+
+/* Spotify remains a listening portal but stripped to monochrome. */
+.platform-hero.spotify{background:#000;border-top:1px solid #fff;border-bottom:1px solid #fff}.platform-hero.spotify .platform-symbol{color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.25)}
+
+/* YOUTUBE = cinema / screening-room language, deliberately unlike Music. */
+.platform-hero.youtube{min-height:82vh;position:relative;overflow:hidden;background:#000;border:0;border-top:1px solid rgba(255,255,255,.22);border-bottom:1px solid rgba(255,255,255,.22);grid-template-columns:minmax(0,.8fr) minmax(320px,1.2fr)}
+.platform-hero.youtube:before{content:"";position:absolute;right:4vw;top:50%;width:min(50vw,760px);aspect-ratio:16/9;transform:translateY(-50%);border:1px solid rgba(255,255,255,.34);background:radial-gradient(circle at center,rgba(255,255,255,.08),transparent 2%,transparent 38%),linear-gradient(145deg,#101010,#020202);box-shadow:inset 0 0 120px #000,0 0 100px rgba(255,255,255,.03)}
+.platform-hero.youtube:after{content:"PLAY";position:absolute;right:calc(4vw + min(25vw,380px));top:50%;transform:translate(50%,-50%);width:92px;height:92px;border:1px solid #fff;border-radius:50%;display:grid;place-items:center;font:700 10px Inter,sans-serif;letter-spacing:3px;color:#fff;transition:.4s}
+.platform-hero.youtube:hover:after{background:#fff;color:#000;transform:translate(50%,-50%) scale(1.08)}
+.platform-hero.youtube>div:first-child{position:relative;z-index:2}.platform-hero.youtube .platform-symbol{opacity:0}
+
+/* On the YouTube route, transform the following release list into cinematic title cards. */
+.platform-hero.youtube + *{}
+.page-hero + .section .platform-hero.youtube ~ *{}
+.platform-hero.youtube + .release-stack{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border-top:0;gap:1px;background:rgba(255,255,255,.22)}
+.platform-hero.youtube + .release-stack>div{min-height:250px;background:#000;display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-end;padding:32px;border:0}
+.platform-hero.youtube + .release-stack>div strong{font-size:clamp(30px,4vw,58px)}
+.platform-hero.youtube + .release-stack>div small{text-align:left;margin-top:16px}
+
+/* Section rhythm / interaction */
+.page-hero{overflow:hidden}.page-hero:after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:#fff;transform-origin:left;animation:lineIn 1.15s cubic-bezier(.2,.8,.2,1) both}.page-hero h1{animation:titleIn .9s cubic-bezier(.2,.8,.2,1) both}
+@keyframes lineIn{from{transform:scaleX(0)}to{transform:scaleX(1)}}@keyframes titleIn{from{opacity:0;transform:translateY(45px);filter:blur(10px)}to{opacity:1;transform:none;filter:none}}
+
+@media(max-width:760px){.hero-art:before{background:radial-gradient(ellipse at 50% 40%,transparent 27%,rgba(0,0,0,.16) 54%,rgba(0,0,0,.72) 100%),linear-gradient(0deg,#000 0,transparent 38%)}.release-stack>div{grid-template-columns:42px 1fr;min-height:104px}.release-stack small{grid-column:2;text-align:left}.platform-hero.youtube{min-height:670px;display:flex;align-items:flex-start;padding-top:55px}.platform-hero.youtube:before{width:calc(100% - 48px);right:24px;top:auto;bottom:55px;transform:none}.platform-hero.youtube:after{right:50%;top:auto;bottom:calc(55px + ((100vw - 48px)*.28125));transform:translate(50%,50%);width:72px;height:72px}.platform-hero.youtube:hover:after{transform:translate(50%,50%) scale(1.06)}.platform-hero.youtube + .release-stack{grid-template-columns:1fr}.platform-hero.youtube + .release-stack>div{min-height:210px}}
