@@ -7,12 +7,14 @@
     bookingEmail: "bookvibemonk@outlook.com",
     bookingPhoneDisplay: "+91 7795183629",
     bookingPhoneLink: "+917795183629",
+    whatsappUrl: "https://wa.me/917795183629",
     baseLocation: "India",
     instagramUrl: "https://www.instagram.com/vibe_monk_muzik/",
-    // Official artist profiles supplied by VIBE MONK.
+    // Paste your actual Spotify artist URL / embed URL and official YouTube video IDs here.
     spotifyArtistUrl: "https://open.spotify.com/artist/2qeftgSP2E2YpTvpIZPfqg",
     spotifyEmbedUrl: "https://open.spotify.com/embed/artist/2qeftgSP2E2YpTvpIZPfqg?utm_source=generator",
     youtubeChannelUrl: "https://www.youtube.com/@VIBEMONKMUZIK",
+    youtubeVideoIds: [],
     // Set a real artist image URL here if you have one; the site has a designed visual fallback.
     artistImageUrl: "./assets/vibe-monk-portrait-white.jpg"
   };
@@ -21,6 +23,8 @@
   const app = $("#app");
   const toast = $("#toast");
   let toastTimer;
+  let youtubePlayers = [];
+  let youtubeApiReady = false;
 
   const routes = {
     home: renderHome,
@@ -73,6 +77,7 @@
 
   function navigate() {
     const key = getRoute();
+    youtubePlayers = [];
     app.innerHTML = routes[key]();
     document.title = `${routeTitle(key)} — VIBE MONK`;
     document.querySelectorAll("[data-nav]").forEach(link => {
@@ -103,7 +108,7 @@
           <a class="hero-instagram" href="${CONFIG.instagramUrl}" target="_blank" rel="noopener noreferrer">Instagram · @vibe_monk_muzik ↗</a>
         </div>
         <div class="hero-art artist-photo-hero" aria-label="VIBE MONK artist portrait from the supplied portfolio">
-          <img src="./assets/vibe-monk-portrait-white.jpg" alt="VIBE MONK in a white suit and sunglasses, portrait from the supplied artist presentation">
+          <img src="./assets/vibe-monk-live-portrait.jpg" alt="VIBE MONK in a dark DJ look with headphones, portrait from the supplied artist presentation">
           <div class="floating-tag tag-bottom">Indian DJ / Ghost Music Producer</div>
         </div>
       </div>
@@ -163,18 +168,36 @@
       <div class="grid-2"><article class="panel"><div class="eyebrow">Series</div><h3>Experimental Series</h3><p>A project series named in the supplied artist portfolio.</p></article><article class="panel"><div class="eyebrow">Series</div><h3>Fusion Dance Music</h3><p>FDM series combining electronic dance production with the influences described in the artist portfolio.</p></article></div>`));
   }
 
+  function youtubeEmbed(id) {
+    return `https://www.youtube-nocookie.com/embed/${encodeURIComponent(id)}?rel=0&modestbranding=1&playsinline=1`;
+  }
+
   function renderVideos() {
-    return page("Video Gallery","See the sound.","Explore official music videos, live moments, studio sessions and visual releases on the VIBE MONK YouTube channel.", section(`
-      <div class="grid-2"><div class="video-channel-card"><div class="video-channel-mark" aria-hidden="true">▶</div><div class="eyebrow">Official YouTube channel</div><h2>VIBE MONK<br><span class="accent">Muzik.</span></h2><p>Watch music releases, visual projects and new uploads directly on the official channel.</p><a class="btn" href="${CONFIG.youtubeChannelUrl}" target="_blank" rel="noopener noreferrer">Watch on YouTube ↗</a></div><div class="panel"><div class="eyebrow">Live visual archive</div><h3>From the booth to the crowd.</h3><p>Browse official videos and performance footage on the channel. New uploads appear there automatically, so this gallery stays useful without manual video IDs.</p><div class="btn-row"><a class="btn secondary" href="${CONFIG.youtubeChannelUrl}/videos" target="_blank" rel="noopener noreferrer">Browse videos ↗</a>${button("Booking portal","#booking")}</div></div></div>`));
+    const ids = CONFIG.youtubeVideoIds.filter(Boolean);
+    const videoContent = ids.length ? `<div class="grid-2">${ids.map((id, i) => `<div><iframe class="embed-frame" src="${youtubeEmbed(id)}" title="VIBE MONK video ${i+1}" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><p class="small">Official video ${i+1}</p></div>`).join("")}</div>` : `<div class="empty-state"><div class="play-icon" style="margin:0 auto 16px">▶</div><h3>Official visuals belong here.</h3><p>In <code>app.js</code>, add your official YouTube video IDs to <code>youtubeVideoIds</code>. The gallery will render responsive embeds automatically.</p>${button("Open YouTube channel",CONFIG.youtubeChannelUrl)}</div>`;
+    return page("Video Gallery","See the sound.","Official music videos, live moments, studio sessions and visual releases.", section(`${videoContent}<div class="section-tight"><div class="panel grid-2"><div><h3>Live visual archive</h3><p>For booking enquiries, use approved footage and event credits only.</p></div><div class="btn-row" style="align-items:center;margin-top:0">${button("Booking portal","#booking")}</div></div>`));
   }
 
   function renderMusic() {
-    const embed = CONFIG.spotifyEmbedUrl.trim();
-    const spotifyPanel = embed ? `<iframe class="embed-frame" src="${escapeAttr(embed)}" title="VIBE MONK Spotify player" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen></iframe>` : `<div class="embed-placeholder"><div><div class="play-icon">♫</div><h3>Spotify artist hub</h3><p>Add your official Spotify embed URL in <code>app.js</code> to display the player here.</p><a class="btn" href="${CONFIG.spotifyArtistUrl}" target="_blank" rel="noopener noreferrer">Open Spotify ↗</a></div></div>`;
-    return page("Music Hub","Press play. Feel more.","A central listening destination for official Spotify releases and YouTube visuals.", section(`
-      <div class="grid-2"><div><div class="eyebrow">Spotify</div><h2>Stream the<br><span class="accent">official sound.</span></h2><p>Use the embedded player when configured, or open the official artist profile directly.</p>${spotifyPanel}</div>
-      <div><div class="eyebrow">YouTube</div><h2>Watch the<br><span class="cyan">visual side.</span></h2><p>Official videos and visual releases, hosted on your YouTube channel.</p><div class="embed-placeholder"><div><div class="play-icon">▶</div><h3>VIBE MONK on YouTube</h3><p>Explore official music videos, visuals and new uploads directly on the channel.</p><a class="btn" href="${CONFIG.youtubeChannelUrl}" target="_blank" rel="noopener noreferrer">Visit official channel ↗</a></div></div></div></div>
-      <div class="section-tight"><div class="split-heading"><div><div class="eyebrow">Platform notes</div><h2>Music, <span class="accent">your way.</span></h2></div><p>Streaming availability, ad presentation and playback controls are managed by the platform provider.</p></div><div class="grid-3"><article class="panel"><h3>Spotify</h3><p>Official profile and optional Spotify Embed player.</p></article><article class="panel"><h3>YouTube</h3><p>Official videos through YouTube's embedded player.</p></article><article class="panel"><h3>Live sets</h3><p>Setlist and performance format are tailored to the booking brief.</p></article></div></div>`));
+    const releases = [
+      { title: "Tirange Ka Jwala", kind: "Patriotic song", search: "Tirange Ka Jwala VIBE MONK" },
+      { title: "Virat Ka Safar", kind: "Virat Kohli tribute", search: "Virat Ka Safar VIBE MONK" },
+      { title: "Thalaivar Nirandaram", kind: "Rajinikanth tribute", search: "Thalaivar Nirandaram VIBE MONK" },
+      { title: "Legacy of Legend", kind: "Dr. Puneeth Rajkumar tribute", search: "Legacy of Legend VIBE MONK" },
+      { title: "Kempu Samrajya", kind: "RCB fan anthem", search: "Kempu Samrajya VIBE MONK" },
+      { title: "Fusion Dance Music", kind: "FDM series", search: "VIBE MONK Fusion Dance Music" },
+      { title: "Experimental Series", kind: "Experimental releases", search: "VIBE MONK Experimental" }
+    ];
+    const releaseCards = releases.map((release, i) => `
+      <article class="discography-card">
+        <div class="discography-art discography-art-${i+1}"><span>${String(i+1).padStart(2,"0")}</span><strong>${release.title}</strong></div>
+        <div class="discography-copy"><h3>${release.title}</h3><p>${release.kind}</p><a class="card-link" href="https://open.spotify.com/search/${encodeURIComponent(release.search)}" target="_blank" rel="noopener noreferrer">Find on Spotify ↗</a></div>
+      </article>`).join("");
+    return page("Music Hub","The artist discography.","Explore VIBE MONK's listed originals, tributes and electronic music series, with links to find each project on Spotify.", section(`
+      <div class="discography-heading"><div><div class="eyebrow">Spotify · Artist discography</div><h2>Releases, tributes<br><span class="accent">& experiments.</span></h2><p class="lead">Browse the projects listed in the artist portfolio. Choose a release to search Spotify, or open the official artist profile for the full, current catalogue.</p></div><div class="discography-cta"><a class="btn" href="${CONFIG.spotifyArtistUrl}" target="_blank" rel="noopener noreferrer">Open VIBE MONK on Spotify ↗</a></div></div>
+      <div class="discography-grid">${releaseCards}</div>
+      <div class="section-tight grid-2"><div><div class="eyebrow">YouTube</div><h2>Watch the <span class="accent">visual side.</span></h2><p>Official videos, visual releases and music content.</p>${CONFIG.youtubeVideoIds.filter(Boolean).length ? `<iframe class="embed-frame" src="${youtubeEmbed(CONFIG.youtubeVideoIds.filter(Boolean)[0])}" title="VIBE MONK official YouTube video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>` : `<div class="embed-placeholder"><div><div class="play-icon">▶</div><h3>Official YouTube</h3><p>Visit the channel to explore the available videos.</p><a class="btn" href="${CONFIG.youtubeChannelUrl}" target="_blank" rel="noopener noreferrer">Visit channel ↗</a></div></div>`}</div>
+      <div><div class="eyebrow">Platform notes</div><h2>Listen <span class="accent">your way.</span></h2><div class="panel"><h3>Spotify</h3><p>Release cards open Spotify search for each project. The official artist profile contains the current catalogue available on Spotify.</p><a class="card-link" href="${CONFIG.spotifyArtistUrl}" target="_blank" rel="noopener noreferrer">Open artist profile ↗</a></div><div class="panel section-tight"><h3>Live sets & bookings</h3><p>Setlist and performance format are tailored to the booking brief.</p>${button("Enquire about a booking", "#contact")}</div></div></div>`));
   }
 
   function renderRider() {
@@ -262,8 +285,15 @@
 
   function renderContact() {
     return page("Contact & Management","The right conversation starts here.","For booking, press, collaborations, production coordination and general artist enquiries.", section(`
-      <div class="grid-2"><div><div class="eyebrow">Direct lines</div><h2>Let's make<br><span class="accent">something move.</span></h2><p>Share a clear subject line and the key details. Booking requests should include the date, venue, event type and expected audience.</p><div class="panel" style="margin-top:24px"><div class="timeline"><time>BOOKING</time><div><h3>Email</h3><p>${emailLink()}</p></div></div><div class="timeline"><time>PHONE</time><div><h3>Call / WhatsApp</h3><p>${phoneLink()}</p></div></div><div class="timeline"><time>BASE</time><div><h3>${CONFIG.baseLocation}</h3><p>Travel availability confirmed per engagement.</p></div></div></div></div>
-      <div class="panel"><div class="eyebrow">Choose a subject</div><h3>How can we help?</h3><div class="grid-2"><a class="gallery-tile" href="mailto:${CONFIG.bookingEmail}?subject=${encodeURIComponent("VIBE MONK — Booking Enquiry")}"><span>01</span><strong>Booking</strong></a><a class="gallery-tile" href="mailto:${CONFIG.bookingEmail}?subject=${encodeURIComponent("VIBE MONK — Press Request")}"><span>02</span><strong>Press kit</strong></a><a class="gallery-tile" href="mailto:${CONFIG.bookingEmail}?subject=${encodeURIComponent("VIBE MONK — Collaboration")}"><span>03</span><strong>Collab</strong></a><a class="gallery-tile" href="mailto:${CONFIG.bookingEmail}?subject=${encodeURIComponent("VIBE MONK — Technical Advance")}"><span>04</span><strong>Production</strong></a></div></div></div>`));
+      <div class="grid-2"><div><div class="eyebrow">Direct lines</div><h2>Let's make<br><span class="accent">something move.</span></h2><p>Share a clear subject line and the key details. Booking requests should include the date, venue, event type and expected audience.</p><div class="panel" style="margin-top:24px"><div class="timeline"><time>BOOKING</time><div><h3>Email</h3><p>${emailLink()}</p></div></div><div class="timeline"><time>PHONE</time><div><h3>Call</h3><p>${phoneLink()}</p><p><a class="contact-action" href="${CONFIG.whatsappUrl}" target="_blank" rel="noopener noreferrer">Open WhatsApp chat ↗</a></p></div></div><div class="timeline"><time>BASE</time><div><h3>${CONFIG.baseLocation}</h3><p>Travel availability confirmed per engagement.</p></div></div></div></div>
+      <div class="panel"><div class="eyebrow">Choose a subject</div><h3>Contact via WhatsApp or email</h3><p>Every enquiry type below gives you both contact options. Choose WhatsApp for a quick message or email for a detailed request.</p><div class="grid-2">
+        ${[
+          {n:"01",title:"Booking",subject:"VIBE MONK — Booking Enquiry",message:"Hi VIBE MONK Management, I would like to enquire about booking VIBE MONK for an event. Event date: [date], city/venue: [venue], event type: [type]. Please share availability and details."},
+          {n:"02",title:"Press Kit",subject:"VIBE MONK — Press Kit Request",message:"Hi VIBE MONK Management, I would like to request the official press kit / media assets. Please let me know the available materials."},
+          {n:"03",title:"Collab",subject:"VIBE MONK — Collaboration Enquiry",message:"Hi VIBE MONK Management, I am reaching out regarding a possible collaboration. Details: [please add your project / idea]. Looking forward to discussing it."},
+          {n:"04",title:"Production",subject:"VIBE MONK — Music Production Enquiry",message:"Hi VIBE MONK Management, I would like to discuss a music production / ghost production project. Project details: [please add details]. Please let me know the next steps."}
+        ].map(item => `<article class="gallery-tile contact-choice"><span>${item.n} / ENQUIRY</span><strong>${item.title}</strong><small>Choose your preferred contact method</small><div class="btn-row" style="margin-top:16px;gap:10px"><a class="btn" href="${CONFIG.whatsappUrl}?text=${encodeURIComponent(item.message)}" target="_blank" rel="noopener noreferrer">WhatsApp ↗</a><a class="btn btn-secondary" href="mailto:${CONFIG.bookingEmail}?subject=${encodeURIComponent(item.subject)}&body=${encodeURIComponent(item.message)}">Email ↗</a></div></article>`).join("")}
+      </div></div></div>`));
   }
 
   function renderPrivacy() {
@@ -279,6 +309,7 @@
   function bindPageEvents(key) {
     if (key === "booking") bindBookingForm();
     if (key === "gear") bindGear();
+    if (key === "videos" || key === "music") initYouTubePlayers();
   }
 
   function bindBookingForm() {
@@ -334,7 +365,16 @@
     });
   }
 
-
+  function initYouTubePlayers() {
+    // Embedded YouTube iframes use the platform's own controls; no fake hardware/audio control is claimed.
+    if (!youtubeApiReady || !window.YT || !window.YT.Player) return;
+    const frames = document.querySelectorAll("iframe[data-youtube-player]");
+    frames.forEach((frame, index) => {
+      if (frame.dataset.playerBound === "true") return;
+      frame.dataset.playerBound = "true";
+      try { youtubePlayers.push(new YT.Player(frame)); } catch (_) { /* fallback to normal iframe */ }
+    });
+  }
 
   function escapeAttr(value) {
     return String(value).replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
@@ -348,6 +388,7 @@
   });
   window.addEventListener("hashchange", navigate);
   window.addEventListener("load", navigate);
+  window.onYouTubeIframeAPIReady = () => { youtubeApiReady = true; initYouTubePlayers(); };
   $("#year").textContent = new Date().getFullYear();
 
   // Expose a small config reference for advanced edits in browser dev tools, not for storing secrets.

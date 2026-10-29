@@ -80,7 +80,65 @@ body::before{background:radial-gradient(ellipse at 82% 15%,rgba(228,239,34,.045)
 .embed-placeholder{background:#090909}
 @media(max-width:620px){.hero-art.artist-photo-hero{height:420px;min-height:360px}.bio-photo-panel,.bio-photo-panel img{min-height:350px}.press-photo-card img{height:420px}}
 
-.video-channel-card{min-height:360px;padding:clamp(24px,5vw,54px);border:1px solid var(--line);background:#090909;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:18px}
-.video-channel-mark{width:64px;height:64px;display:grid;place-items:center;border:1px solid var(--acid);color:var(--acid);font-size:25px}
-.video-channel-card h2{font-size:clamp(36px,5vw,62px);line-height:.98;margin:0;letter-spacing:-1.8px}
-.video-channel-card p{max-width:42ch;color:var(--muted)}
+/* Requested visual refresh: red + yellow atmosphere, white typography, lower logo. */
+:root{--bg:#170506;--panel:#28090b;--panel2:#3a0b0e;--ink:#ffffff;--muted:#ffffff;--line:rgba(255,205,35,.38);--acid:#ffd12e;--cyan:#ffd12e;--violet:#690f17}
+body{color:#fff;background:#170506}
+body::before{background:radial-gradient(ellipse at 12% 10%,rgba(218,22,35,.38),transparent 42%),radial-gradient(ellipse at 88% 65%,rgba(255,195,24,.13),transparent 36%),linear-gradient(140deg,#160406,#31080c 58%,#1a0506)}
+.site-header{background:rgba(31,4,7,.96);border-bottom:1px solid rgba(255,205,35,.48)}
+.wordmark.logo-link{transform:translateY(7px);position:relative;z-index:2}
+.main-nav a,.main-nav a:hover,.main-nav a.active,.main-nav .nav-book{color:#fff}
+.main-nav .nav-book{border-color:#ffd12e;background:rgba(255,209,46,.09)}
+.eyebrow,.hero-instagram:hover,.ticker-track span:nth-child(even),.bio-logo-panel span,.archive-note strong,.venue-city span,.release-stack>div>span,.gallery-tile span,.press-photo-card figcaption span,.press-photo-card figcaption strong,.platform-action,.contact-action{color:#fff}
+h1,h2,h3,h4,p,li,label,small,strong,time,figcaption,.pill,.footer-links,.site-footer small,.field label,.form-note,.checkbox-line,.page-intro,.breadcrumb,.small{color:#fff}
+a{color:#fff}
+a:hover{color:#fff}
+.btn,.btn.secondary,.control-btn.primary{background:#9d101b;border:1px solid #ffd12e;color:#fff}
+.btn:hover,.btn.secondary:hover{background:#c51b27;border-color:#ffe16a;color:#fff}
+.panel,.gallery-tile,.deck-console,.deck-unit,.mixer-unit,.empty-state,.embed-placeholder,.cover-art{background-color:rgba(75,8,14,.72);border-color:rgba(255,209,46,.42)}
+.gallery-tile,.gallery-tile:hover{background-image:linear-gradient(140deg,rgba(208,20,35,.48),rgba(255,191,20,.12) 58%,#26070a)}
+.page-hero{background:linear-gradient(100deg,rgba(193,17,32,.36),rgba(255,197,24,.1) 55%,transparent)}
+.ticker{background:#2a0609}
+.archive-note{background:#34080c;border-left-color:#ffd12e}
+.field input,.field select,.field textarea{background:#230609;color:#fff;border-color:rgba(255,209,46,.55)}
+.field input::placeholder,.field textarea::placeholder{color:#fff;opacity:.75}
+.field option{background:#230609;color:#fff}
+.site-footer{background:#1d0508;border-top-color:rgba(255,209,46,.45)}
+.footer-links{color:#fff}
+.toast{background:#a50e1a;border:1px solid #ffd12e;color:#fff}
+.platform-link{display:block;transition:transform .2s,border-color .2s;cursor:pointer}
+.platform-link:hover{transform:translateY(-3px);border-color:#ffd12e}
+.platform-action{display:inline-block;margin-top:10px;padding:8px 10px;border:1px solid #ffd12e;background:#8f0c17;font-size:10px;letter-spacing:1.4px;font-weight:800}
+.contact-action{display:inline-block;text-decoration:underline;text-underline-offset:4px}
+.contact-choice small{display:block;margin-top:12px;font-size:11px;letter-spacing:.4px}
+@media(max-width:620px){.main-nav{background:#250609;border-bottom-color:rgba(255,209,46,.45)}.wordmark.logo-link{transform:translateY(5px)}}
+
+
+/* Definitive header logo positioning fix: keep the full mark visible and lower it within the header. */
+.site-header{min-height:78px;height:78px;overflow:visible}
+.site-header .wordmark.logo-link{width:100px !important;max-width:24vw !important;height:auto !important;align-self:center;position:relative;top:9px !important;transform:none !important;flex-shrink:0}
+.site-header .wordmark.logo-link img{display:block;width:100%;height:auto;max-height:62px;object-fit:contain}
+@media(max-width:620px){.site-header .wordmark.logo-link{width:88px !important;max-width:27vw !important;top:7px !important;transform:none !important}.site-header .wordmark.logo-link img{max-height:54px}}
+
+/* Artist discography grid */
+.discography-heading{display:flex;align-items:end;justify-content:space-between;gap:28px;margin-bottom:30px}
+.discography-heading h2{font-size:clamp(34px,5vw,60px);line-height:.98;margin:10px 0 14px}
+.discography-heading .lead{max-width:720px}
+.discography-cta{flex-shrink:0;padding-bottom:8px}
+.discography-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+.discography-card{min-width:0;overflow:hidden;border:1px solid var(--line);border-radius:12px;background:var(--panel);transition:transform .2s ease,border-color .2s ease}
+.discography-card:hover{transform:translateY(-4px);border-color:var(--acid)}
+.discography-art{aspect-ratio:1/1;display:flex;flex-direction:column;justify-content:space-between;padding:18px;background:radial-gradient(circle at 75% 25%,rgba(215,255,56,.26),transparent 32%),linear-gradient(145deg,#4a1014,#100b0c 68%);position:relative;overflow:hidden}
+.discography-art:after{content:"";position:absolute;width:150px;height:150px;border:1px solid rgba(255,255,255,.25);border-radius:50%;right:-48px;bottom:-45px;box-shadow:0 0 0 14px rgba(255,255,255,.025),0 0 0 30px rgba(255,255,255,.02)}
+.discography-art span{font-size:11px;letter-spacing:2px;color:var(--acid);position:relative;z-index:1}
+.discography-art strong{font:900 clamp(22px,2.3vw,32px)/.95 var(--display);text-transform:uppercase;max-width:90%;position:relative;z-index:1;color:#fff}
+.discography-art-2{background:radial-gradient(circle at 25% 25%,rgba(255,190,35,.3),transparent 35%),linear-gradient(145deg,#222,#090909)}
+.discography-art-3{background:radial-gradient(circle at 75% 25%,rgba(255,65,65,.32),transparent 35%),linear-gradient(145deg,#351016,#090909)}
+.discography-art-4{background:radial-gradient(circle at 75% 25%,rgba(255,255,255,.2),transparent 35%),linear-gradient(145deg,#3a311d,#090909)}
+.discography-art-5{background:radial-gradient(circle at 25% 25%,rgba(20,180,75,.35),transparent 35%),linear-gradient(145deg,#173b24,#090909)}
+.discography-art-6{background:radial-gradient(circle at 75% 25%,rgba(255,190,35,.35),transparent 35%),linear-gradient(145deg,#4a250b,#08090d)}
+.discography-art-7{background:radial-gradient(circle at 25% 25%,rgba(255,65,65,.25),transparent 35%),linear-gradient(145deg,#25123d,#08090d)}
+.discography-copy{padding:16px}
+.discography-copy h3{font-size:19px;margin:0 0 4px}
+.discography-copy p{font-size:12px;color:var(--muted);min-height:36px;margin:0 0 12px}
+@media(max-width:900px){.discography-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:620px){.discography-heading{display:block}.discography-cta{margin-top:18px}.discography-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.discography-art{padding:13px}.discography-copy{padding:12px}.discography-copy h3{font-size:16px}.discography-art strong{font-size:24px}}
