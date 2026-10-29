@@ -70,3 +70,14 @@ body:has([data-nav=gallery].active) .vm-asset span{display:none!important}
 .venue-archive .venue-list{min-width:0;gap:8px;align-items:flex-start}
 .venue-archive .venue-list span{max-width:100%;white-space:normal;overflow-wrap:anywhere}
 @media(max-width:760px){.venue-archive .venue-group{gap:20px;padding:28px 0}.venue-archive .venue-city{gap:12px}.venue-archive .venue-list span{font-size:11px;line-height:1.5}}
+
+/* The screening panel is a real channel link, including keyboard access. */
+.platform-hero.youtube{grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:clamp(28px,4vw,64px)}
+.platform-hero.youtube:before,.platform-hero.youtube:after{content:none}
+.platform-hero.youtube>div:first-child{min-width:0}
+.platform-hero.youtube h2{font-size:clamp(36px,5vw,80px);overflow-wrap:anywhere}
+.youtube-play-link{position:relative;display:grid;place-items:center;aspect-ratio:16/9;width:100%;border:1px solid #555;background:linear-gradient(145deg,#101010,#020202);color:#fff}
+.youtube-play-link span{display:grid;place-items:center;width:92px;height:92px;border:1px solid #fff;border-radius:50%;font:700 10px Inter,sans-serif;letter-spacing:3px;text-transform:uppercase;transition:background .2s,color .2s}
+.youtube-play-link:hover span,.youtube-play-link:focus-visible span{background:#fff;color:#000}
+.youtube-play-link:focus-visible{outline:2px solid #fff;outline-offset:6px}
+@media(max-width:900px){.platform-hero.youtube{grid-template-columns:minmax(0,1fr);min-height:0;gap:32px}.platform-hero.youtube h2{font-size:clamp(36px,8vw,64px)}}
