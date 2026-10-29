@@ -103,44 +103,154 @@ window.VIBE_MEDIA = {
   ],
   "photos": [
     {
-      "src": "./artist-photos/artist-01.webp",
-      "thumb": "./artist-photos/artist-01-thumb.webp",
-      "alt": "VIBE MONK original artist photograph \u2014 Hands on headphones"
+      "src": "./artist-photos-edited/artist-01.webp",
+      "thumb": "./artist-photos-edited/artist-01-thumb.webp",
+      "number": "01",
+      "alt": "VIBE MONK \u2014 PHOTO #01"
     },
     {
-      "src": "./artist-photos/artist-02.webp",
-      "thumb": "./artist-photos/artist-02-thumb.webp",
-      "alt": "VIBE MONK original artist photograph \u2014 Hand across face"
+      "src": "./artist-photos-edited/artist-02.webp",
+      "thumb": "./artist-photos-edited/artist-02-thumb.webp",
+      "number": "02",
+      "alt": "VIBE MONK \u2014 PHOTO #02"
     },
     {
-      "src": "./artist-photos/artist-03.webp",
-      "thumb": "./artist-photos/artist-03-thumb.webp",
-      "alt": "VIBE MONK original artist photograph \u2014 Headphones extended toward camera"
+      "src": "./artist-photos-edited/artist-03.webp",
+      "thumb": "./artist-photos-edited/artist-03-thumb.webp",
+      "number": "03",
+      "alt": "VIBE MONK \u2014 PHOTO #03"
     },
     {
-      "src": "./artist-photos/artist-04.webp",
-      "thumb": "./artist-photos/artist-04-thumb.webp",
-      "alt": "VIBE MONK original artist photograph \u2014 Finger to lips"
+      "src": "./artist-photos-edited/artist-04.webp",
+      "thumb": "./artist-photos-edited/artist-04-thumb.webp",
+      "number": "04",
+      "alt": "VIBE MONK \u2014 PHOTO #04"
     },
     {
-      "src": "./artist-photos/artist-05.webp",
-      "thumb": "./artist-photos/artist-05-thumb.webp",
-      "alt": "VIBE MONK original artist photograph \u2014 Three-quarter portrait"
+      "src": "./artist-photos-edited/artist-05.webp",
+      "thumb": "./artist-photos-edited/artist-05-thumb.webp",
+      "number": "05",
+      "alt": "VIBE MONK \u2014 PHOTO #05"
     },
     {
-      "src": "./artist-photos/artist-12.webp",
-      "thumb": "./artist-photos/artist-12-thumb.webp",
-      "alt": "VIBE MONK original artist photograph \u2014 Side profile"
+      "src": "./artist-photos-edited/artist-12.webp",
+      "thumb": "./artist-photos-edited/artist-12-thumb.webp",
+      "number": "12",
+      "alt": "VIBE MONK \u2014 PHOTO #12"
     },
     {
-      "src": "./artist-photos/artist-14.webp",
-      "thumb": "./artist-photos/artist-14-thumb.webp",
-      "alt": "VIBE MONK original artist photograph \u2014 Head lowered"
+      "src": "./artist-photos-edited/artist-14.webp",
+      "thumb": "./artist-photos-edited/artist-14-thumb.webp",
+      "number": "14",
+      "alt": "VIBE MONK \u2014 PHOTO #14"
     },
     {
-      "src": "./artist-photos/artist-16.webp",
-      "thumb": "./artist-photos/artist-16-thumb.webp",
-      "alt": "VIBE MONK original artist photograph \u2014 Upward gaze"
+      "src": "./artist-photos-edited/artist-16.webp",
+      "thumb": "./artist-photos-edited/artist-16-thumb.webp",
+      "number": "16",
+      "alt": "VIBE MONK \u2014 PHOTO #16"
+    },
+    {
+      "src": "./artist-photos-edited/artist-22.webp",
+      "thumb": "./artist-photos-edited/artist-22-thumb.webp",
+      "number": "22",
+      "alt": "VIBE MONK \u2014 PHOTO #22"
+    },
+    {
+      "src": "./artist-photos-edited/artist-08.webp",
+      "thumb": "./artist-photos-edited/artist-08-thumb.webp",
+      "number": "08",
+      "alt": "VIBE MONK \u2014 PHOTO #08"
+    },
+    {
+      "src": "./artist-photos-edited/artist-23.webp",
+      "thumb": "./artist-photos-edited/artist-23-thumb.webp",
+      "number": "23",
+      "alt": "VIBE MONK \u2014 PHOTO #23"
+    },
+    {
+      "src": "./artist-photos-edited/artist-18.webp",
+      "thumb": "./artist-photos-edited/artist-18-thumb.webp",
+      "number": "18",
+      "alt": "VIBE MONK \u2014 PHOTO #18"
+    },
+    {
+      "src": "./artist-photos-edited/artist-06.webp",
+      "thumb": "./artist-photos-edited/artist-06-thumb.webp",
+      "number": "06",
+      "alt": "VIBE MONK \u2014 PHOTO #06"
+    },
+    {
+      "src": "./artist-photos-edited/artist-10.webp",
+      "thumb": "./artist-photos-edited/artist-10-thumb.webp",
+      "number": "10",
+      "alt": "VIBE MONK \u2014 PHOTO #10"
+    },
+    {
+      "src": "./artist-photos-edited/artist-21.webp",
+      "thumb": "./artist-photos-edited/artist-21-thumb.webp",
+      "number": "21",
+      "alt": "VIBE MONK \u2014 PHOTO #21"
+    },
+    {
+      "src": "./artist-photos-edited/artist-09.webp",
+      "thumb": "./artist-photos-edited/artist-09-thumb.webp",
+      "number": "09",
+      "alt": "VIBE MONK \u2014 PHOTO #09"
+    },
+    {
+      "src": "./artist-photos-edited/artist-26.webp",
+      "thumb": "./artist-photos-edited/artist-26-thumb.webp",
+      "number": "26",
+      "alt": "VIBE MONK \u2014 PHOTO #26"
+    },
+    {
+      "src": "./artist-photos-edited/artist-07.webp",
+      "thumb": "./artist-photos-edited/artist-07-thumb.webp",
+      "number": "07",
+      "alt": "VIBE MONK \u2014 PHOTO #07"
+    },
+    {
+      "src": "./artist-photos-edited/artist-11.webp",
+      "thumb": "./artist-photos-edited/artist-11-thumb.webp",
+      "number": "11",
+      "alt": "VIBE MONK \u2014 PHOTO #11"
+    },
+    {
+      "src": "./artist-photos-edited/artist-17.webp",
+      "thumb": "./artist-photos-edited/artist-17-thumb.webp",
+      "number": "17",
+      "alt": "VIBE MONK \u2014 PHOTO #17"
+    },
+    {
+      "src": "./artist-photos-edited/artist-24.webp",
+      "thumb": "./artist-photos-edited/artist-24-thumb.webp",
+      "number": "24",
+      "alt": "VIBE MONK \u2014 PHOTO #24"
+    },
+    {
+      "src": "./artist-photos-edited/artist-15.webp",
+      "thumb": "./artist-photos-edited/artist-15-thumb.webp",
+      "number": "15",
+      "alt": "VIBE MONK \u2014 PHOTO #15"
+    },
+    {
+      "src": "./artist-photos-edited/artist-20.webp",
+      "thumb": "./artist-photos-edited/artist-20-thumb.webp",
+      "number": "20",
+      "alt": "VIBE MONK \u2014 PHOTO #20"
+    },
+    {
+      "src": "./artist-photos-edited/artist-13.webp",
+      "thumb": "./artist-photos-edited/artist-13-thumb.webp",
+      "number": "13",
+      "alt": "VIBE MONK \u2014 PHOTO #13"
+    },
+    {
+      "src": "./artist-photos-edited/artist-19.webp",
+      "thumb": "./artist-photos-edited/artist-19-thumb.webp",
+      "number": "19",
+      "alt": "VIBE MONK \u2014 PHOTO #19"
     }
   ]
 };

@@ -44,3 +44,8 @@
 .artist-story p:first-of-type{color:#fff;font-size:19px}
 @media(max-width:760px){.page-hero{padding:32px 0 36px!important}.page-logo-title img{width:195px;max-height:165px}.page-hero .page-section-label{font-size:25px!important}.page-hero .page-logo-title{gap:20px;margin:0 0 22px!important}.page-hero .page-intro{font-size:23px;line-height:1.3;max-width:100%}.artist-story h2{font-size:clamp(33px,8.3vw,48px)!important}.artist-story p,.artist-story p:first-of-type{font-size:16px;line-height:1.65}.artist-story p:first-of-type{font-size:18px}}
 /* Consistent bold uppercase artist identity across the site. */ body{text-transform:uppercase} p,.lead,.page-intro,.venue-list span,.footer-links,.form-note,.field label,.social-pill{font-weight:700!important} h1,h2,h3,.main-nav a,.btn,.card-link{font-weight:800!important} input,textarea{font-weight:600;text-transform:none}
+
+/* Uniform numbered photo frames: preserve body proportions without stretching. */
+body:has([data-nav="gallery"].active) .vm-asset-grid{align-items:start}
+body:has([data-nav="gallery"].active) .vm-asset img{display:block;width:100%;height:auto;aspect-ratio:3/4;object-fit:contain;background:#080808}
+body:has([data-nav="gallery"].active) .vm-asset span{display:block;width:100%;font-size:12px;font-weight:800;letter-spacing:.12em;border-top:1px solid #444;padding-top:12px}
