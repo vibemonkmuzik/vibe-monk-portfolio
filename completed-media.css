@@ -52,3 +52,12 @@ body:has([data-nav="gallery"].active) .vm-asset span{display:block;width:100%;fo
 
 /* Gallery captions hidden after selection. */
 body:has([data-nav=gallery].active) .vm-asset span{display:none!important}
+
+/* Festival atmosphere replaces the tightly cropped homepage portrait. */
+.hero .festival-art img{object-fit:cover!important;object-position:65% center!important;filter:brightness(.85) saturate(.8)!important;animation:festivalDrift 24s ease-in-out infinite alternate;transition:none!important}
+.hero .festival-art:before{background:linear-gradient(90deg,rgba(0,0,0,.55),transparent 70%)!important}
+.hero .festival-art:after{background:linear-gradient(0deg,#000,transparent 38%)!important}
+.hero:has(.festival-art) .hero-copy{background:linear-gradient(90deg,rgba(0,0,0,.78),rgba(0,0,0,.22) 65%,rgba(0,0,0,.12))!important}
+@keyframes festivalDrift{from{transform:scale(1.02)}to{transform:scale(1.08)}}
+@media(max-width:760px){.hero .festival-art img{object-position:70% center!important}.hero:has(.festival-art) .hero-copy{background:linear-gradient(180deg,rgba(0,0,0,.4),rgba(0,0,0,.5) 45%,#000)!important}}
+@media(prefers-reduced-motion:reduce){.hero .festival-art img{animation:none!important;transform:none!important}}
