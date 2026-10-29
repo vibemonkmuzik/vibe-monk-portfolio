@@ -73,7 +73,6 @@
 
   function navigate() {
     const key = getRoute();
-    youtubePlayers = [];
     app.innerHTML = routes[key]();
     document.title = `${routeTitle(key)} — VIBE MONK`;
     document.querySelectorAll("[data-nav]").forEach(link => {
