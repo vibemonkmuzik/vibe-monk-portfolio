@@ -49,3 +49,6 @@
 body:has([data-nav="gallery"].active) .vm-asset-grid{align-items:start}
 body:has([data-nav="gallery"].active) .vm-asset img{display:block;width:100%;height:auto;aspect-ratio:3/4;object-fit:contain;background:#080808}
 body:has([data-nav="gallery"].active) .vm-asset span{display:block;width:100%;font-size:12px;font-weight:800;letter-spacing:.12em;border-top:1px solid #444;padding-top:12px}
+
+/* Gallery captions hidden after selection. */
+body:has([data-nav=gallery].active) .vm-asset span{display:none!important}
