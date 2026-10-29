@@ -61,3 +61,12 @@ body:has([data-nav=gallery].active) .vm-asset span{display:none!important}
 @keyframes festivalDrift{from{transform:scale(1.02)}to{transform:scale(1.08)}}
 @media(max-width:760px){.hero .festival-art img{object-position:70% center!important}.hero:has(.festival-art) .hero-copy{background:linear-gradient(180deg,rgba(0,0,0,.4),rgba(0,0,0,.5) 45%,#000)!important}}
 @media(prefers-reduced-motion:reduce){.hero .festival-art img{animation:none!important;transform:none!important}}
+
+/* Give every city a full row above its venue chips. */
+.venue-archive .venue-group{grid-template-columns:minmax(0,1fr);gap:24px;padding:36px 0}
+.venue-archive .venue-city{min-width:0;gap:18px;align-items:baseline}
+.venue-archive .venue-city h3{margin:0;min-width:0;font-size:clamp(30px,4vw,62px);line-height:1.08;overflow-wrap:anywhere}
+.venue-archive .venue-city h3 .motion-word{max-width:100%;overflow-wrap:anywhere}
+.venue-archive .venue-list{min-width:0;gap:8px;align-items:flex-start}
+.venue-archive .venue-list span{max-width:100%;white-space:normal;overflow-wrap:anywhere}
+@media(max-width:760px){.venue-archive .venue-group{gap:20px;padding:28px 0}.venue-archive .venue-city{gap:12px}.venue-archive .venue-list span{font-size:11px;line-height:1.5}}
