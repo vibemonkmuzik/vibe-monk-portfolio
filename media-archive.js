@@ -1,1 +1,13 @@
-(()=>{"use strict";function add(){const k=(location.hash||'#home').slice(1),root=document.querySelector('#app .container');if(!root)return;if(k==='gigs'&&!document.querySelector('.vm-media-archive'))root.insertAdjacentHTML('beforeend',`<section class="vm-media-archive"><div class="vm-media-head"><span>ORIGINAL EVENT ARTWORK</span><h2>PERFORMANCE<br><i>ARCHIVE.</i></h2><p>Original VIBE MONK event artwork from the performance archive.</p></div><div class="vm-flyer-stage"><button class="vm-flyer" type="button"><img src="./gig-flyers/gig-01.webp" alt="Original VIBE MONK event flyer"><span>VIEW FLYER ↗</span></button></div></section>`);if(k==='gallery'&&!document.querySelector('.vm-photo-feature'))root.insertAdjacentHTML('beforeend',`<section class="vm-photo-feature"><div class="vm-media-head"><span>ARTIST VISUALS</span><h2>VIBE MONK<br><i>IN FRAME.</i></h2></div><div class="vm-photo-strip"><figure><img src="./assets/vibe-monk-portrait-dark.jpg" alt="VIBE MONK portrait"></figure><figure><img src="./assets/vibe-monk-live-portrait.jpg" alt="VIBE MONK performance portrait"></figure><figure><img src="./assets/vibe-monk-portrait-white.jpg" alt="VIBE MONK portrait"></figure></div></section>`)}document.addEventListener('click',e=>{const b=e.target.closest('.vm-flyer');if(!b)return;const d=document.createElement('div');d.className='vm-lightbox';d.innerHTML='<button aria-label="Close">×</button><img src="./gig-flyers/gig-01.webp" alt="Original VIBE MONK event flyer">';document.body.appendChild(d);requestAnimationFrame(()=>d.classList.add('open'));d.onclick=x=>{if(x.target===d||x.target.tagName==='BUTTON')d.remove()}});window.addEventListener('hashchange',()=>setTimeout(add,80));new MutationObserver(add).observe(document.getElementById('app'),{childList:true,subtree:true});add()})();
+(() => {
+ 'use strict';
+ let trigger;
+ const close=()=>{document.querySelector('.vm-lightbox')?.remove();document.body.style.overflow='';if(trigger?.isConnected)trigger.focus()};
+ document.addEventListener('click',event=>{
+ const b=event.target.closest('[data-media-src]');if(!b)return;trigger=b;
+ const d=document.createElement('dialog');d.className='vm-lightbox open';d.setAttribute('aria-label',b.querySelector('img').alt);
+ const img=document.createElement('img');img.src=b.dataset.mediaSrc;img.alt=b.querySelector('img').alt;
+ const x=document.createElement('button');x.type='button';x.textContent='×';x.setAttribute('aria-label','Close image');x.onclick=close;
+ d.append(x,img);d.addEventListener('cancel',e=>{e.preventDefault();close()});d.onclick=e=>{if(e.target===d)close()};
+ document.body.append(d);document.body.style.overflow='hidden';d.showModal();x.focus();
+ });window.addEventListener('hashchange',close);
+})();
